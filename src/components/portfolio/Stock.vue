@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <router-view></router-view>
+    <div>
+        portfolio - stock component
     </div>
 </template>
 
@@ -10,6 +10,6 @@
   };
 </script>
 
-<style>
+<style scoped>
 
 </style>
