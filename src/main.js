@@ -5,6 +5,9 @@ import App from './App.vue'
 import { routes } from './routes'
 import store from './store/store'
 
+// import filters
+import './filters'
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
