@@ -22,6 +22,10 @@ const getters = {
 }
 
 const mutations = {
+  'SET_PORTFOLIO'(state, portfolioObj) {
+    state.funds = portfolioObj.funds
+    state.portfolio = portfolioObj.portfolio ? portfolioObj.portfolio : []
+  },
   'BUY_STOCK'(state, { stockId, quantity, stockPrice }) {
     // check if the stock is already in portfolio
     const stockRecord = state.portfolio.find(stockInPortfolio => stockInPortfolio.id === stockId )

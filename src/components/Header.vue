@@ -30,8 +30,8 @@
                            aria-haspopup="true"
                            aria-expanded="false">Save & Load <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Save Data</a></li>
-                            <li><a href="#">Load Data</a></li>
+                            <li><a href="#" @click="saveData">Save Data</a></li>
+                            <li><a href="#" @click="loadData">Load Data</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -55,6 +55,20 @@
     methods: {
       endDay() {
         this.$store.dispatch('randomizeStocks')
+      },
+      saveData() {
+        // retrieve data from the store
+        const data = {
+          funds: this.$store.getters.funds,
+          portfolio: this.$store.getters.portfolio,
+          stocks: this.$store.getters.stocks
+        }
+
+        // store the data into firebase database
+        this.$http.put('data.json', data)
+      },
+      loadData() {
+        this.$store.dispatch('fetchData')
       }
     }
   };
