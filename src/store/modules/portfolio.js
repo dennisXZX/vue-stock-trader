@@ -26,9 +26,6 @@ const mutations = {
     // check if the stock is already in portfolio
     const stockRecord = state.portfolio.find(stockInPortfolio => stockInPortfolio.id === stockId )
 
-    console.log('state.portfolio', state.portfolio)
-    console.log('stockRecord', stockRecord)
-
     // update portfolio
     if (stockRecord) {
       stockRecord.quantity += quantity
