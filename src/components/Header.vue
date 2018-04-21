@@ -17,7 +17,7 @@
 
                 <!-- menu on the right -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">End Day</a></li>
+                    <li><a href="#" @click="endDay">End Day</a></li>
                     <li class="dropdown">
                         <a href="#"
                            class="dropdown-toggle"
@@ -41,6 +41,11 @@
     computed: {
       funds() {
         return this.$store.getters.funds
+      }
+    },
+    methods: {
+      endDay() {
+        this.$store.dispatch('randomizeStocks')
       }
     }
   };
