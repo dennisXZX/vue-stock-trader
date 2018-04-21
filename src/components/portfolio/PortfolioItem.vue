@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-6 col-md-4">
-        <div class="panel panel-primary">
+        <div class="panel panel-success">
             <!-- panel header -->
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -22,7 +22,7 @@
 
                 <div class="pull-right">
                     <button
-                            class="btn btn-primary"
+                            class="btn btn-success"
                             @click="placeSellOrder"
                             :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(quantity)">
                         {{ insufficientQuantity ? 'Not Enough' : 'Sell' }}
