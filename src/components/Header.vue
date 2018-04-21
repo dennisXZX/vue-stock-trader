@@ -18,7 +18,11 @@
                 <!-- menu on the right -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" @click="endDay">End Day</a></li>
-                    <li class="dropdown">
+                    <li
+                        class="dropdown"
+                        :class="{ open: isDropdownOpen }"
+                        @click="isDropdownOpen = !isDropdownOpen"
+                        @mouseleave="isDropdownOpen = false">
                         <a href="#"
                            class="dropdown-toggle"
                            data-toggle="dropdown"
@@ -38,6 +42,11 @@
 
 <script>
   export default {
+    data() {
+      return {
+        isDropdownOpen: false
+      }
+    },
     computed: {
       funds() {
         return this.$store.getters.funds
