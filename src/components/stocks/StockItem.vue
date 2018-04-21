@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-6 col-md-4">
-        <div class="panel panel-success">
+        <div class="panel panel-primary">
             <!-- panel header -->
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -21,7 +21,7 @@
 
                 <div class="pull-right">
                     <button
-                            class="btn btn-success"
+                            class="btn btn-primary"
                             @click="buyStock"
                             :disabled="quantity <= 0 || !Number.isInteger(quantity)">
                         Buy
@@ -49,6 +49,7 @@
         }
 
         console.log(order)
+        this.$store.dispatch('buyStock', order)
 
         this.quantity = 0
       }
